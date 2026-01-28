@@ -11,8 +11,6 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "3.2.x-Reduced_And_No_Test_Version"]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   build:
