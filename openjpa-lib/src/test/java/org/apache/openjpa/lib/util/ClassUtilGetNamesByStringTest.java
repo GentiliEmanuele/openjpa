@@ -35,5 +35,6 @@ public class ClassUtilGetNamesByStringTest {
     @Test
     public void testGetOnlyClassName() {
         Assert.assertEquals(expectedClassName, ClassUtil.getClassName(fullClassName));
+        Assert.assertEquals(expectedPackageName, ClassUtil.getPackageName(fullClassName));
     }
 }
