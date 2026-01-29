@@ -155,12 +155,10 @@
                             <targetTests>
                                 <param>org.apache.openjpa.lib.*</param>
                             </targetTests>
-                    <!--
                     <excludedClasses>
                         <param>**/Gemini*</param>
                         <param>**/Randoop*</param>
                     </excludedClasses>
-                            -->
                     <argLine>-Xmx1024m</argLine>
                     <threads>4</threads>
                 </configuration>
