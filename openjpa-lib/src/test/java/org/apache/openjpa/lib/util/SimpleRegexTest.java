@@ -44,6 +44,8 @@ public class SimpleRegexTest {
                 {"x.*", false, null, "xabc", true},
                 {"x.*", false, null, "Xabc", false},
                 {null, false, NullPointerException.class, "Xabc", false},
+                // Added after Jacoco interaction
+                {".*abc", true, null, "ab", false}
         });
     }
 
