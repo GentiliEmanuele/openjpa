@@ -10,23 +10,25 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class ClassUtilGetOnlyClassNameTest {
+public class ClassUtilGetNamesByStringTest {
     private final String fullClassName;
     private final String expectedClassName;
+    private final String expectedPackageName;
 
-    public ClassUtilGetOnlyClassNameTest(String fullClassName, String expectedClassName) {
+    public ClassUtilGetNamesByStringTest(String fullClassName, String expectedClassName, String expectedPackageName) {
         this.fullClassName = fullClassName;
         this.expectedClassName = expectedClassName;
+        this.expectedPackageName = expectedPackageName;
     }
 
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {"java.util.ArrayList", "ArrayList"},
-                {"ArrayList", "ArrayList"},
-                {"java.util.arraylist", "arraylist"},
-                {"", ""},
-                {null, null}
+                {"java.util.ArrayList", "ArrayList", "java.util"},
+                {"ArrayList", "ArrayList", ""},
+                {"java.util.arraylist", "arraylist", "java.util"},
+                {"", "", ""},
+                {null, null, null}
         });
     }
 
