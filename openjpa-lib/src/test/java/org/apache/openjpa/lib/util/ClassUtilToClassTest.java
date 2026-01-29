@@ -72,11 +72,4 @@ public class ClassUtilToClassTest {
             Assert.assertThrows(expectedException, () -> ClassUtil.toClass(str, loader));
         }
     }
-
-    // Inner class added only for test
-    private static class MyClass {
-        public static class MyInnerClass {
-
-        }
-    }
 }
