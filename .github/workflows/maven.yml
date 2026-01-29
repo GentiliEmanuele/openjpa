@@ -17,5 +17,7 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Test and run Jacoco
+      run: mvn clean test -pl openjpa-lib -Pcoverage
+    - name : Test and run Pit
+      run: mvn clean test org.pitest:pitest-maven:mutationCoverage -pl openjpa-lib -Ppit

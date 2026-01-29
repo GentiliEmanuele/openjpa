@@ -155,25 +155,27 @@
                             <targetTests>
                                 <param>org.apache.openjpa.lib.*</param>
                             </targetTests>
-                            <excludedClasses>
-                                <param>**/Gemini*</param>
-                                <param>**/Randoop*</param>
-                            </excludedClasses>
-                            <argLine>-Xmx1024m</argLine>
-                            <threads>4</threads>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+                    <!--
+                    <excludedClasses>
+                        <param>**/Gemini*</param>
+                        <param>**/Randoop*</param>
+                    </excludedClasses>
+                            -->
+                    <argLine>-Xmx1024m</argLine>
+                    <threads>4</threads>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</profile>
+</profiles>
 
-    <build>
-        <plugins>
-            <!--
-                get the git revision number and set it in the git.revision setting - disabled for now
-                since we need to be able to build from sources zip (when there is no .git/config)
-            -->
+<build>
+<plugins>
+    <!--
+        get the git revision number and set it in the git.revision setting - disabled for now
+        since we need to be able to build from sources zip (when there is no .git/config)
+    -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>

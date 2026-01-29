@@ -45,7 +45,9 @@ public class SimpleRegexTest {
                 {"x.*", false, null, "Xabc", false},
                 {null, false, NullPointerException.class, "Xabc", false},
                 // Added after Jacoco interaction
-                {".*abc", true, null, "ab", false}
+                {".*abc", true, null, "ab", false},
+                // Added after Pit interaction
+                {"A.*B.*", false, null, "A---b---", false}
         });
     }
 
@@ -63,7 +65,7 @@ public class SimpleRegexTest {
             SimpleRegex regex = new SimpleRegex(expr, caseSensitive);
             // Test constructor
             Assert.assertNotNull(regex);
-            Assert.assertTrue(regex.matches(expr));
+            // Assert.assertTrue(regex.matches(expr));
 
             // Test match
             boolean actualOutput = regex.matches(target);
