@@ -128,6 +128,44 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>pit</id>
+            <properties>
+                <checkstyle.skip>true</checkstyle.skip>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>1.15.3</version> <executions>
+                        <execution>
+                            <id>pit-report</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>mutationCoverage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                        <configuration>
+                            <targetClasses>
+                                <param>org.apache.openjpa.lib.util.SimpleRegex</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>org.apache.openjpa.lib.*</param>
+                            </targetTests>
+                            <excludedClasses>
+                                <param>**/Gemini*</param>
+                                <param>**/Randoop*</param>
+                            </excludedClasses>
+                            <argLine>-Xmx1024m</argLine>
+                            <threads>4</threads>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <build>
