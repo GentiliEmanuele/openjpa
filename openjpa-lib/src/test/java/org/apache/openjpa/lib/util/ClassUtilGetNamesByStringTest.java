@@ -28,7 +28,11 @@ public class ClassUtilGetNamesByStringTest {
                 {"ArrayList", "ArrayList", ""},
                 {"java.util.arraylist", "arraylist", "java.util"},
                 {"", "", ""},
-                {null, null, null}
+                {null, null, null},
+                // Added after Jacoco interaction
+                {"[[Ljava.util.ArrayList;", "ArrayList[][]", "java.util"},
+                {"[[Ljava.util.ArrayList", "ArrayList[][]", "java.util"},
+                {"[I", "int[]", ""}
         });
     }
 
