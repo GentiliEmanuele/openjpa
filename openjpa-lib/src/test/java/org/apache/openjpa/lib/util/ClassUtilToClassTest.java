@@ -27,7 +27,7 @@ public class ClassUtilToClassTest {
     }
 
     @Parameters
-    public static Collection<Object[]> data() {
+    public static Collection<Object[]> data() throws ClassNotFoundException {
         return Arrays.asList(new Object[][] {
                 // toClass method input
                 {"java.util.ArrayList", false, ClassLoader.getSystemClassLoader(), ArrayList.class, null},
@@ -56,6 +56,9 @@ public class ClassUtilToClassTest {
                 {"java.util.arraylist", true, null, null, RuntimeException.class},
                 {null, true, null, null, NullPointerException.class},
                 {"", true, null, null, RuntimeException.class},
+                // Added after Jacoco interaction
+                {"java.util.ArrayList[][]", true, ClassLoader.getSystemClassLoader(), Class.forName("[[Ljava.util.ArrayList;"), null},
+                {"int[]", true, ClassLoader.getSystemClassLoader(), Class.forName("[I"), null},
         });
     }
 
