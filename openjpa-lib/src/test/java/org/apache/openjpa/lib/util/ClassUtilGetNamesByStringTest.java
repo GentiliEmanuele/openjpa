@@ -32,7 +32,11 @@ public class ClassUtilGetNamesByStringTest {
                 // Added after Jacoco interaction
                 {"[[Ljava.util.ArrayList;", "ArrayList[][]", "java.util"},
                 {"[[Ljava.util.ArrayList", "ArrayList[][]", "java.util"},
-                {"[I", "int[]", ""}
+                {"[I", "int[]", ""},
+                // Added after Pit interaction
+                {"[[XX;", "X[][]", ""},
+                {"[[XX", "X[][]", ""},
+                {"java.lang.String[]", "String[]", "java.lang"},
         });
     }
 

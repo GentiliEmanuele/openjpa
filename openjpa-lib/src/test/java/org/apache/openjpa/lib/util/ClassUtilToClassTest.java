@@ -59,7 +59,12 @@ public class ClassUtilToClassTest {
                 // Added after Jacoco interaction
                 {"java.util.ArrayList[][]", true, ClassLoader.getSystemClassLoader(), Class.forName("[[Ljava.util.ArrayList;"), null},
                 {"int[]", true, ClassLoader.getSystemClassLoader(), Class.forName("[I"), null},
-        });
+                // Added after Pit interaction
+                {"bite", true, ClassLoader.getSystemClassLoader(), null, IllegalArgumentException.class},
+                {"int[][][]", true, ClassLoader.getSystemClassLoader(), Class.forName("[[[I"), null},
+                {"[", true, ClassLoader.getSystemClassLoader(), null, IllegalArgumentException.class},
+
+         });
     }
 
     @Test
@@ -72,7 +77,10 @@ public class ClassUtilToClassTest {
             Assert.assertEquals(clazz, ClassUtil.toClass(str, resolve, loader));
 
         } else {
-            Assert.assertThrows(expectedException, () -> ClassUtil.toClass(str, loader));
+            Assert.assertThrows(expectedException, () -> {
+                ClassUtil.toClass(str, loader);
+                ClassUtil.toClass(str, resolve, loader);
+            });
         }
     }
 }
