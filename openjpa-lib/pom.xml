@@ -151,6 +151,7 @@
                         <configuration>
                             <targetClasses>
                                 <param>org.apache.openjpa.lib.util.SimpleRegex</param>
+                                <param>org.apache.openjpa.lib.util.ClassUtil</param>
                             </targetClasses>
                             <targetTests>
                                 <param>org.apache.openjpa.lib.*</param>
