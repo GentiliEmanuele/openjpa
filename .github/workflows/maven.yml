@@ -17,8 +17,6 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Install openjpa
-      run: mvn clean install -DskipTests
     - name: Test and run Jacoco
       run: mvn clean test -pl openjpa-lib -Pcoverage
     - name : Test and run Pit
