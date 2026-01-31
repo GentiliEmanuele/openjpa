@@ -130,6 +130,8 @@
                                     <excludes>
                                         <exclude>org.apache.openjpa.lib.util.evo.regex.SimpleRegex_ESTest</exclude>
                                         <exclude>org.apache.openjpa.lib.util.evo.regex.SimpleRegex_ESTest_scaffolding</exclude>
+                                        <exclude>org.apache.openjpa.lib.util.evo.classutil.ClassUtil_ESTest</exclude>
+                                        <exclude>org.apache.openjpa.lib.util.evo.classutil.ClassUtil_ESTest_scaffolding</exclude>
                                     </excludes>
                                 </configuration>
                             </execution>
